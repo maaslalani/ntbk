@@ -1,3 +1,3 @@
 pub fn run(name: String) {
-    println!("{}", name);
+    println!("Creating new note {}", name);
 }

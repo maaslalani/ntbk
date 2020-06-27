@@ -1,3 +1,3 @@
 pub fn run() {
-    println!("TODO");
+    println!("Listing notes");
 }

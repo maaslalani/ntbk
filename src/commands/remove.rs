@@ -1,3 +1,3 @@
-pub fn run() {
-    println!("TODO");
+pub fn run(name: String) {
+    println!("Removing note {}", name);
 }

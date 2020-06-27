@@ -2,16 +2,19 @@ mod commands;
 
 fn main() {
     let action = std::env::args().nth(1).expect("No action provided");
-    let name = std::env::args().nth(2).expect("No name provided");
+    let operand = std::env::args().nth(2);
+
+    let pattern_error = "No pattern provided";
+    let name_error = "No pattern provided";
 
     match action.as_str() {
-        "new" => commands::new::run(name),
+        "find" => commands::find::run(operand.expect(pattern_error)),
+        "grep" => commands::grep::run(operand.expect(pattern_error)),
         "list" => commands::list::run(),
-        "find" => commands::find::run(),
-        "grep" => commands::grep::run(),
-        "open" => commands::open::run(),
-        "show" => commands::show::run(),
-        "remove" => commands::remove::run(),
+        "new" => commands::new::run(operand.expect(name_error)),
+        "open" => commands::open::run(operand.expect(name_error)),
+        "remove" => commands::remove::run(operand.expect(name_error)),
+        "show" => commands::show::run(operand.expect(name_error)),
         _ => commands::help::run(),
     }
 }

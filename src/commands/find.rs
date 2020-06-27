@@ -1,3 +1,3 @@
-pub fn run() {
-    println!("TODO");
+pub fn run(pattern: String) {
+    println!("Finding {}", pattern);
 }
