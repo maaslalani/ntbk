@@ -6,13 +6,13 @@ fn main() {
 
     match action.as_str() {
         "new" => commands::new(),
-        "list" => println!("TODO"),
-        "find" => println!("TODO"),
-        "grep" => println!("TODO"),
-        "open" => println!("TODO"),
-        "show" => println!("TODO"),
-        "remove" => println!("TODO"),
-        "help" => println!("TODO"),
+        "list" => commands::list(),
+        "find" => commands::find(),
+        "grep" => commands::grep(),
+        "open" => commands::open(),
+        "show" => commands::show(),
+        "remove" => commands::remove(),
+        "help" => commands::help(),
         _ => println!("Unexpected action"),
     }
 }
