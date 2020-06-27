@@ -12,7 +12,6 @@ fn main() {
         "open" => commands::open::run(),
         "show" => commands::show::run(),
         "remove" => commands::remove::run(),
-        "help" => commands::help::run(),
-        _ => println!("Unexpected action"),
+        _ => commands::help::run(),
     }
 }
