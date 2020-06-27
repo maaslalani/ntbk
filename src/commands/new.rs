@@ -1,3 +1,5 @@
+use crate::config;
+
 pub fn run() {
-    println!("TODO");
+    println!("{}", config::LOCATION);
 }

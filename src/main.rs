@@ -1,4 +1,5 @@
 mod commands;
+mod config;
 
 fn main() {
     let action = std::env::args().nth(1).expect("No action provided");
