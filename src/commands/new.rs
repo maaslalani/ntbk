@@ -1,3 +1,3 @@
-pub fn run(name: String) {
-    println!("Creating new note {}", name);
+pub fn run() {
+    println!("TODO");
 }

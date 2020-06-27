@@ -1,3 +1,3 @@
-pub fn run(name: String) {
-    println!("Opening {}", name);
+pub fn run() {
+    println!("TODO");
 }

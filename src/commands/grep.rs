@@ -1,3 +1,3 @@
-pub fn run(pattern: String) {
-    println!("Grepping {}", pattern);
+pub fn run() {
+    println!("TODO");
 }
