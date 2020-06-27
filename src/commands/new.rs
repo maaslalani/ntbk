@@ -9,7 +9,7 @@ pub fn run() {
         std::env::args().nth(2).unwrap()
     };
 
-    match File::create(format!("{}/{}.{}", config::LOCATION, name, config::EXTENSION)) {
+    match File::create(format!("{}/{}.{}", config::DIRECTORY, name, config::EXTENSION)) {
         Ok(_) => println!("Note {} created.", name),
         Err(_) => println!("Failed to create note."),
     };
