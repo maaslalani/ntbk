@@ -5,14 +5,14 @@ fn main() {
     let name = std::env::args().nth(2).expect("No name provided");
 
     match action.as_str() {
-        "new" => commands::new(),
-        "list" => commands::list(),
-        "find" => commands::find(),
-        "grep" => commands::grep(),
-        "open" => commands::open(),
-        "show" => commands::show(),
-        "remove" => commands::remove(),
-        "help" => commands::help(),
+        "new" => commands::new::run(name),
+        "list" => commands::list::run(),
+        "find" => commands::find::run(),
+        "grep" => commands::grep::run(),
+        "open" => commands::open::run(),
+        "show" => commands::show::run(),
+        "remove" => commands::remove::run(),
+        "help" => commands::help::run(),
         _ => println!("Unexpected action"),
     }
 }

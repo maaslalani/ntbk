@@ -1,3 +1,3 @@
-pub fn command() {
+pub fn run() {
     println!("TODO");
 }
