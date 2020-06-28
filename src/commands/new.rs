@@ -1,5 +1,5 @@
-use dialoguer::Input;
 use crate::config;
+use dialoguer::Input;
 use std::fs::File;
 
 pub fn run() {
