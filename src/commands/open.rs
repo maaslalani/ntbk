@@ -1,5 +1,5 @@
 use crate::config;
-use crate::util::{args_len,choose_note,get_argument};
+use crate::util::*;
 use std::process::Command;
 
 pub fn run() {
