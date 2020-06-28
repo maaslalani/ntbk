@@ -9,7 +9,7 @@ pub fn run() {
         get_argument(2)
     };
 
-    match File::create(format!("{}{}{}", config::DIRECTORY, name, config::EXTENSION)) {
+    match File::create(format!("{}{}{}", &config::directory(), name, config::EXTENSION)) {
         Ok(_) => println!("Note {} created.", name),
         Err(_) => println!("Failed to create note."),
     };

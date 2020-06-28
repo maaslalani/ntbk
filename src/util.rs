@@ -42,10 +42,10 @@ pub fn get_argument(n: usize) -> String {
 }
 
 pub fn list_notes() -> Vec<String> {
-    let files = match fs::read_dir(config::DIRECTORY) {
+    let files = match fs::read_dir(&config::directory()) {
         Ok(val) => val,
         Err(err) => {
-            eprintln!("Error: Failed to open {}", config::DIRECTORY);
+            eprintln!("Error: Failed to open {}", &config::directory());
             panic!(err)
         }
     };
@@ -68,6 +68,6 @@ pub fn extract_path(file: result::Result<fs::DirEntry, io::Error>) -> String {
 }
 
 fn extract_name(path: String) -> String {
-    path.replace(config::DIRECTORY, "")
+    path.replace(&config::directory(), "")
         .replace(config::EXTENSION, "")
 }

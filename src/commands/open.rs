@@ -11,7 +11,7 @@ pub fn run() {
 
     Command::new(config::EDITOR)
         .arg(format!("{}{}", name, config::EXTENSION))
-        .current_dir(config::DIRECTORY)
+        .current_dir(&config::directory())
         .status()
         .expect("Failed to open file.");
 }

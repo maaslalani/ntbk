@@ -9,7 +9,7 @@ pub fn run() {
         get_argument(2)
     };
 
-    match fs::remove_file(format!("{}{}{}", config::DIRECTORY, name, config::EXTENSION)) {
+    match fs::remove_file(format!("{}{}{}", &config::directory(), name, config::EXTENSION)) {
         Ok(_) => println!("Note {} removed.", name),
         Err(_) => println!("Failed to remove note."),
     };
