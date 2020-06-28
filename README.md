@@ -10,9 +10,9 @@ Clone this repository and `cd` into it.
 git clone git@github.com:maaslalani/ntbk.git && cd ntbk
 ```
 
-Edit the `config.rs` file with your configuration.
+Set the `NOTES_DIRECTORY` variable to your notes `ENV`. (Default is ~/notes).
 ```bash
-$EDITOR src/config.rs
+export NOTES_DIRECTORY="/Users/maas/notes/"
 ```
 
 Install `ntbk` with cargo.
