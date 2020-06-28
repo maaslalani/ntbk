@@ -5,7 +5,11 @@ mod util;
 use commands::*;
 
 fn main() {
-    let action = util::get_argument(1);
+    let action = if util::args_len() > 1 {
+        util::get_argument(1)
+    } else {
+        String::from("help")
+    };
 
     match action.as_str() {
         "f" | "find" => find::run(),
