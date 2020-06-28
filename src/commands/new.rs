@@ -1,12 +1,12 @@
 use crate::config;
-use dialoguer::Input;
+use crate::util::*;
 use std::fs::File;
 
 pub fn run() {
-    let name = if std::env::args().len() < 3 {
-        Input::<String>::new().with_prompt("Name").interact().unwrap()
+    let name = if args_len() < 3 {
+        get_input()
     } else {
-        std::env::args().nth(2).unwrap()
+        get_argument(2)
     };
 
     match File::create(format!("{}{}{}", config::DIRECTORY, name, config::EXTENSION)) {

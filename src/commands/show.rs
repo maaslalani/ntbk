@@ -1,12 +1,12 @@
 use crate::config;
-use crate::util;
+use crate::util::*;
 use std::process::Command;
 
 pub fn run() {
-    let name = if std::env::args().len() < 3 {
-        util::choose_note()
+    let name = if args_len() < 3 {
+        choose_note()
     } else {
-        std::env::args().nth(2).unwrap()
+        get_argument(2)
     };
 
     Command::new(config::SHOW_COMMAND)
