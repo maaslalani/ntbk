@@ -1,5 +1,5 @@
 use crate::config;
-use dialoguer::{Select,Input,theme};
+use dialoguer::{Select,Input,Confirm,theme};
 use std::{fs,result,io,env};
 
 pub fn choose_note() -> String {
@@ -17,6 +17,19 @@ pub fn choose_note() -> String {
         };
 
     options[selection].to_string()
+}
+
+pub fn get_confirmation(prompt: &str) -> bool {
+    let theme = theme::ColorfulTheme::default();
+    match Confirm::with_theme(&theme)
+        .with_prompt(prompt)
+        .interact() {
+        Ok(val) => val,
+        Err(err) => {
+            eprintln!("Error: Failed to open prompt");
+            panic!(err)
+        }
+    }
 }
 
 pub fn get_input() -> String {

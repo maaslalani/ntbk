@@ -1,5 +1,5 @@
 use crate::config;
-use crate::util::{args_len,choose_note,get_argument};
+use crate::util::*;
 use std::fs;
 
 pub fn run() {
@@ -8,6 +8,11 @@ pub fn run() {
     } else {
         get_argument(2)
     };
+
+    if !get_confirmation("Confirm") {
+        println!("Notes {} was not removed.", name);
+        return
+    }
 
     match fs::remove_file(format!("{}{}{}", &config::directory(), name, config::EXTENSION)) {
         Ok(_) => println!("Note {} removed.", name),
