@@ -3,7 +3,7 @@ mod config;
 mod util;
 
 fn main() {
-    let action = std::env::args().nth(1).expect("No action provided");
+    let action = std::env::args().nth(1).unwrap_or_default();
 
     match action.as_str() {
         "find" => commands::find::run(),
