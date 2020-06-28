@@ -1,9 +1,7 @@
 use crate::config;
 use dialoguer::Select;
 use dialoguer::Input;
-use std::fs;
-use std::result;
-use std::io;
+use std::{fs,result,io,env};
 
 pub fn choose_note() -> String {
     let options = list_notes();
@@ -21,7 +19,7 @@ pub fn get_input() -> String {
 }
 
 pub fn get_argument(n: usize) -> String {
-    std::env::args().nth(n).unwrap()
+    env::args().nth(n).unwrap()
 }
 
 pub fn list_notes() -> Vec<String> {
@@ -30,7 +28,7 @@ pub fn list_notes() -> Vec<String> {
 }
 
 pub fn args_len() -> usize {
-    std::env::args().len() 
+    env::args().len() 
 }
 
 pub fn extract_path(file: result::Result<fs::DirEntry, io::Error>) -> String {
