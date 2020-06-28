@@ -1,11 +1,11 @@
 use crate::config;
-use dialoguer::Select;
-use dialoguer::Input;
+use dialoguer::{Select,Input,theme};
 use std::{fs,result,io,env};
 
 pub fn choose_note() -> String {
     let options = list_notes();
-    let selection = Select::new()
+    let theme = theme::ColorfulTheme::default();
+    let selection = Select::with_theme(&theme)
         .default(0)
         .items(&options[..])
         .interact()
@@ -15,7 +15,8 @@ pub fn choose_note() -> String {
 }
 
 pub fn get_input() -> String {
-    Input::<String>::new().interact().unwrap()
+    let theme = theme::ColorfulTheme::default();
+    Input::<String>::with_theme(&theme).interact().unwrap()
 }
 
 pub fn get_argument(n: usize) -> String {
