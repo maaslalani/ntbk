@@ -12,6 +12,5 @@ pub fn run() {
     println!("  ntbk show   <name>     - Show a note's content");
 
     println!("\nAll <name> arguments are optional");
-    println!("if none is provided then you will be presented with a list of your notes to choose from");
-    println!("or an input box where appropriate");
+    println!("if none is provided then you will be presented with a list or an input box");
 }
