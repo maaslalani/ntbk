@@ -10,7 +10,7 @@ pub fn run() {
     };
 
     Command::new(config::EDITOR)
-        .arg(format!("{}.{}", name, config::EXTENSION))
+        .arg(format!("{}{}", name, config::EXTENSION))
         .current_dir(config::DIRECTORY)
         .status()
         .expect("Failed to open file.");

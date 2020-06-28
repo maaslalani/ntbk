@@ -25,6 +25,4 @@ pub fn extract_path(file: result::Result<fs::DirEntry, io::Error>) -> String {
 fn extract_name(path: String) -> String {
     path.replace(config::DIRECTORY, "")
         .replace(config::EXTENSION, "")
-        .replace("/", "")
-        .replace(".", "")
 }
