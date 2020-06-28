@@ -2,17 +2,19 @@ mod commands;
 mod config;
 mod util;
 
+use commands::*;
+
 fn main() {
-    let action = std::env::args().nth(1).unwrap_or_default();
+    let action = util::get_argument(1);
 
     match action.as_str() {
-        "find" => commands::find::run(),
-        "grep" => commands::grep::run(),
-        "list" => commands::list::run(),
-        "new" => commands::new::run(),
-        "open" => commands::open::run(),
-        "remove" => commands::remove::run(),
-        "show" => commands::show::run(),
-        _ => commands::help::run(),
+        "f" | "find" => find::run(),
+        "g" | "grep" => grep::run(),
+        "l" | "list" => list::run(),
+        "n" | "new" => new::run(),
+        "o" | "open" => open::run(),
+        "r" | "remove" => remove::run(),
+        "s" | "show" => show::run(),
+        _ => help::run(),
     }
 }

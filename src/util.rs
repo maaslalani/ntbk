@@ -20,7 +20,7 @@ pub fn get_input() -> String {
 }
 
 pub fn get_argument(n: usize) -> String {
-    env::args().nth(n).unwrap()
+    env::args().nth(n).unwrap_or_default()
 }
 
 pub fn list_notes() -> Vec<String> {
