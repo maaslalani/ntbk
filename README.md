@@ -10,7 +10,7 @@ Clone this repository and `cd` into it.
 git clone git@github.com:maaslalani/ntbk.git && cd ntbk
 ```
 
-Set the `NOTES_DIRECTORY` variable to your notes `ENV`. (Default is ~/notes).
+Set the `NOTES_DIRECTORY` variable to your notes `ENV`. (default is `~/notes`).
 ```bash
 export NOTES_DIRECTORY="/Users/maas/notes/"
 ```
