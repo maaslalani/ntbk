@@ -4,20 +4,22 @@
 
 ## Installation
 
-Clone this repository and `cd` into it.
+Clone this repository.
 
 ```bash
-git clone git@github.com:maaslalani/ntbk.git && cd ntbk
-```
-
-Set the `NOTES_DIRECTORY` variable to your notes `ENV`. (default is `~/notes`).
-```bash
-export NOTES_DIRECTORY="/Users/maas/notes/"
+git clone git@github.com:maaslalani/ntbk.git
 ```
 
 Install `ntbk` with cargo.
 ```bash
-cargo install --path .
+cargo install --path ntbk
+```
+
+## Configuration
+Set the `NOTES_DIRECTORY` variable to your notes `ENV`. (default is `~/notes`).
+
+```bash
+export NOTES_DIRECTORY="/Users/maas/notes/"
 ```
 
 ## Usage
