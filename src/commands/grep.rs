@@ -11,6 +11,7 @@ pub fn run() {
 
     Command::new(config::GREP_COMMAND)
         .arg(format!("{}", pattern))
+        .arg("-i")
         .current_dir(&config::directory())
         .status()
         .expect("Failed to open file.");
